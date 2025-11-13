@@ -1,3 +1,4 @@
+nome_playlists = []
 playlists = []
 usuario = ""
 senha = ""
@@ -37,6 +38,7 @@ def login_entrar ():
          break
       else: 
          print("Tente novamente")
+
 
 def nova_playlist():
       nova_playlist=bool(input("Você deseja adicionar uma nova playlist?"))

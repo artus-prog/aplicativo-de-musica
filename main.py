@@ -1,5 +1,8 @@
+arquivo = open("arquivos_salvos.txt", "a")
+
 nome_playlists = []
 playlists = []
+musicas_salvas=[]
 usuario = ""
 senha = ""
 
@@ -38,8 +41,17 @@ def login_entrar ():
          break
       else: 
          print("Tente novamente")
-
-
+def salvar_musica():
+   escolha = input("Você deseja adicionar uma música a sua lista de músicas salvas? ").strip().lower()
+   if escolha == "sim":
+      musica_nova = input("Digite o nome da sua música nova e o autor seguindo o seguinte modelo: Amor Bandido-Oruam. ")
+      musicas_salvas.append(musica_nova)
+      print(f"Você adicionou: {musica_nova} as suas músicas salvas")
+   elif escolha == "nao" or escolha == "não":
+      print("Ok")
+   else:
+      ("Opção inválida")
+   print(f"Suas músicas salvas são: {musicas_salvas}")
 def nova_playlist():
       nova_playlist=bool(input("Você deseja adicionar uma nova playlist?"))
       
@@ -49,9 +61,17 @@ def nova_playlist():
 
 def main_site():
    login()
-   if len(playlists)== 0:
-      print("Você não possui nenhuma playlist salva!")
-      nova_playlist()
+   print("""___MENU___
+1. Acessar músicas salvas
+2. Acessar suas playlists 
+""")
+   escolha = int(input("O que deseja fazer: "))
+   if escolha == 1:
+      if len(musicas_salvas) == 0:
+         print("Você não possui músicas salvas")
+         salvar_musica()
+
+
 
 while True:
    print("Bem vindo a sla aplicativo de música")

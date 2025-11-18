@@ -1,5 +1,3 @@
-arquivo = open("arquivos_salvos.txt", "a")
-
 nome_playlists = []
 playlists = []
 musicas_salvas=[]

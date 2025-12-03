@@ -16,7 +16,6 @@ def login():
       elif login_inicial in ("não","nao"):
          login_entrar()
          break
-
       else:
          print("Resposta inválida!")
 
@@ -49,10 +48,9 @@ def salvar_musica(música):
    musicas_salvas.append(música)
    escolha = input("Pressione enter para sair ou digite o nome de outra música: ")
    if escolha == "":
-      print(f"Ok, Suas músicas salvas são: {musicas_salvas}")
+      print(f"Ok, Suas músicas salvas agora são: {musicas_salvas}")
    else:
       salvar_musica(escolha)
-
 #Ainda trabalhando
 def nova_playlist():
       nova_playlist=bool(input("Você deseja adicionar uma nova playlist?"))
@@ -60,6 +58,26 @@ def nova_playlist():
       if nova_playlist==True:
          nome_playlist=input("Digite o nome da sua nova playlist: ")
          playlists.append(nome_playlist)
+
+#Esta função lê todos elementos de uma playlist um por um
 def escutarPlaylist(Playlist):
    for i in Playlist:
       input(f"Tocando: {i}, para pular pressione enter!")
+
+
+def acesso_musicas_salvas():
+   while True:
+         #O seguinte caso só ocorrerá caso não haja músicas salvas
+         if len(musicas_salvas) == 0:
+            print("Você não possui músicas salvas")
+            primeira_musica = input("Caso deseje adicionar uma música nova escreva o nome da múscia caso contrario pressione enter: ")
+            if primeira_musica != "":
+               salvar_musica(primeira_musica)
+         else:
+            print(f"Suas músicas salvas são: {musicas_salvas}")
+            ouvir = input("Você deseja ouvir suas músicas salvas? ")
+            if ouvir == "sim":
+               escutarPlaylist(musicas_salvas)
+               
+         
+         break

@@ -91,19 +91,19 @@ def acesso_playlists():
          if playlists0 == "sim":
             primeira_playlist = input("Digite sua primeira playlist: ")
             criar_playlists(primeira_playlist)
-         else:
-            print(f"Suas playlists são: {nome_playlists}")
-            menu_playlists = int(input("""O que você deseja fazer:
+         
+         print(f"Suas playlists são: {nome_playlists}")
+         menu_playlists = int(input("""O que você deseja fazer:
 1.Criar uma nova playlist
 2.Escutar uma playlist
 3.Sair"""))
-            if menu_playlists == 1:
-               nova_play = input("Digite sua nova playlist: ")
-               criar_playlists(nova_play)
-            elif menu_playlists == 2:
-               playlist_escutar = input("Digite o nome da playlist a ser escutada: ")
-               escutarPlaylist(playlist_escutar)
-            elif menu_playlists == 3:
-               sair = input("Você tem certeza que deseja sair? (sim/não) ")
-               if sair == "sim":
-                  break
+         if menu_playlists == 1:
+            nova_play = input("Digite sua nova playlist: ")
+            criar_playlists(nova_play)
+         elif menu_playlists == 2:
+            playlist_escutar = input("Digite o nome da playlist a ser escutada: ")
+            escutarPlaylist(playlist_escutar)
+         elif menu_playlists == 3:
+            sair = input("Você tem certeza que deseja sair? (sim/não) ")
+            if sair == "sim":
+               break

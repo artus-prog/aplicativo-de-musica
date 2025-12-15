@@ -51,13 +51,6 @@ def salvar_musica(música):
       print(f"Ok, Suas músicas salvas agora são: {musicas_salvas}")
    else:
       salvar_musica(escolha)
-#Ainda trabalhando
-def nova_playlist():
-      nova_playlist=bool(input("Você deseja adicionar uma nova playlist?"))
-      
-      if nova_playlist==True:
-         nome_playlist=input("Digite o nome da sua nova playlist: ")
-         playlists.append(nome_playlist)
 
 #Esta função lê todos elementos de uma playlist um por um
 def escutarPlaylist(Playlist):
@@ -90,7 +83,6 @@ def adicionar_musica(nome_musica, nome_playlist):
          if playlist[0] == nome_playlist:
             playlist[1].append(nome_musica) 
             print(f"Música '{nome_musica}' adicionada à playlist '{nome_playlist}'.")
-   print(f"Suas playlists são: {playlists}")
 
 def acesso_playlists():
    while True:
@@ -100,7 +92,18 @@ def acesso_playlists():
             primeira_playlist = input("Digite sua primeira playlist: ")
             criar_playlists(primeira_playlist)
          else:
-            print(f"Suas playlists são: {playlists}")
-      sair = input("Você deseja sair dessa pagina?(sim/não) ")
-      if sair == "sim":
-         break
+            print(f"Suas playlists são: {nome_playlists}")
+            menu_playlists = int(input("""O que você deseja fazer:
+1.Criar uma nova playlist
+2.Escutar uma playlist
+3.Sair"""))
+            if menu_playlists == 1:
+               nova_play = input("Digite sua nova playlist: ")
+               criar_playlists(nova_play)
+            elif menu_playlists == 2:
+               playlist_escutar = input("Digite o nome da playlist a ser escutada: ")
+               escutarPlaylist(playlist_escutar)
+            elif menu_playlists == 3:
+               sair = input("Você tem certeza que deseja sair? (sim/não) ")
+               if sair == "sim":
+                  break

@@ -78,6 +78,29 @@ def acesso_musicas_salvas():
             ouvir = input("Você deseja ouvir suas músicas salvas? ")
             if ouvir == "sim":
                escutarPlaylist(musicas_salvas)
-               
-         
+         break
+   
+def criar_playlists(nome_playlist):
+   playlists.append(nome_playlist)
+   nome_playlists.append(nome_playlist)
+   print(f"Playlist {nome_playlist} adicionada com sucesso.")
+
+def adicionar_musica(nome_musica, nome_playlist):
+   for playlist in playlists:
+         if playlist[0] == nome_playlist:
+            playlist[1].append(nome_musica) 
+            print(f"Música '{nome_musica}' adicionada à playlist '{nome_playlist}'.")
+   print(f"Suas playlists são: {playlists}")
+
+def acesso_playlists():
+   while True:
+      if len(playlists) == 0:
+         playlists0 = input("Você não possui playlists, deseja adicionar? (sim/não) ")
+         if playlists0 == "sim":
+            primeira_playlist = input("Digite sua primeira playlist: ")
+            criar_playlists(primeira_playlist)
+         else:
+            print(f"Suas playlists são: {playlists}")
+      sair = input("Você deseja sair dessa pagina?(sim/não) ")
+      if sair == "sim":
          break

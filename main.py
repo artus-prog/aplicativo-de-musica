@@ -10,5 +10,8 @@ while True:
    acesso_menu = int(input("O que deseja fazer: "))
    if acesso_menu == 1:
       funçoes.acesso_musicas_salvas()
-   
-   break
+   elif acesso_menu == 2:
+      funçoes.acesso_playlists()
+   sair = input("Você deseja sair? (sim/não) ")
+   if sair == "sim":
+      break

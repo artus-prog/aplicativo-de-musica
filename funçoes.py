@@ -54,7 +54,7 @@ def salvar_musica(música):
 
 #Esta função lê todos elementos de uma playlist um por um
 def escutarPlaylist(Playlist):
-   for i in Playlist:
+   for i in playlists[Playlist]:
       input(f"Tocando: {i}, para pular pressione enter!")
 
 
